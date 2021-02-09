@@ -1,0 +1,121 @@
+.background {
+    background-color: black;
+}
+
+.navbar {
+    background-color: rgb(28, 28, 28);
+    margin: 0px;
+    height: 70px;
+    display: flex;
+    width: 100%;
+    -webkit-app-region: drag;
+}
+
+.lowerHeader {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(153, 153, 153, 255);
+}
+
+.lowHeaderCategories {
+    padding-left: 5%;
+}
+
+.lowHeaderToggle {
+    padding-left: 10%;
+}
+
+.lowHeaderName {
+    padding-left: 5%;
+}
+
+.lowHeaderPath {
+    padding-right: 5%;
+    padding-left: 50%;
+}
+
+.lowHeaderSize {
+    padding-right: 5%;
+}
+
+.sidebar {
+    background-color: black;
+    order: 1;
+    width: 20%;
+    height: 80%;
+    position: absolute;
+    overflow: auto;
+}
+
+.sidebar:hover {
+    overflow-y: scroll;
+}
+
+.togglePanel {
+    background-color: rgba(13, 13, 13, 255);
+    width: 90%;
+}
+
+.lowerContent {
+    display: flex;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    -webkit-app-region: no-drag;
+}
+
+.minimize {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    -webkit-app-region: no-drag;
+}
+
+.category {
+    background-color: rgba(26, 26, 26, 255);
+    margin: 5%;
+    padding: 5%;
+    text-align: center;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    margin: 0px;
+    /* Hide horizontal scrollbar */
+    overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(27, 27, 27);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(53, 53, 53);
+}
