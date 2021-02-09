@@ -20,7 +20,7 @@
 }
 
 .lowHeaderCategories {
-    padding-left: 5%;
+    padding-left: 55px;
 }
 
 .lowHeaderToggle {
@@ -42,10 +42,8 @@
 
 .sidebar {
     background-color: black;
-    order: 1;
-    width: 20%;
-    height: 80%;
-    position: absolute;
+    width: 200px;
+    height: 100%;
     overflow: auto;
 }
 
@@ -55,11 +53,14 @@
 
 .togglePanel {
     background-color: rgba(13, 13, 13, 255);
-    width: 90%;
+    width: calc(100% - 200px);
+    margin-left: 10px;
 }
 
 .lowerContent {
     display: flex;
+    flex-direction: row;
+    height: 500px;
 }
 
 .close {
@@ -69,11 +70,19 @@
     -webkit-app-region: no-drag;
 }
 
+.close:hover {
+    background-color: rgba(0, 0, 0, 255);
+}
+
 .minimize {
     position: absolute;
     top: 10px;
     right: 40px;
     -webkit-app-region: no-drag;
+}
+
+.minimize:hover {
+    background-color: rgba(0, 0, 0, 255);
 }
 
 .category {
@@ -90,6 +99,45 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.marrowBookmark {
+    background-color: rgba(13, 13, 13, 255);
+    margin-left: 10px;
+}
+
+.bonetomeBookmark {
+    background-color: rgba(13, 13, 13, 255);
+    margin-left: 10px;
+}
+
+.selectedGame {
+    background-color: black;
+    margin: 10px;
+    margin-left: 50px;
+    width: 350px;
+}
+
+.dropDown {
+    background-color: black;
+    margin: 10px;
+    margin-left: -10px;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    align-content: center;
+}
+
+.settingsBtn {
+    background-color: black;
+    margin: 10px;
+    margin-left: -5px;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    align-content: center;
 }
 
 body {
