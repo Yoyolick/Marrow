@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/tome.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+        <script src="scripts/menuHandler.js"></script>
+        <script src="scripts/onLoad.js"></script>
+    </head>
+    <body class="unselectable">
+        <div class="navbar">
+            
+            <a href="index.html" class="marrowBookmark">
+                <div>
+                    <img src="photos/marrow" class="marrowIcon hvr-float">
+                </div>
+            </a>
+
+            <a class="bonetomeBookmark">
+                <div>
+                    <img src="photos/tomeIcon.png" class="tomeIcon">
+                </div>
+            </a>
+
+            <span class="material-icons md-36 minimize" onclick="minWindow()">minimize</span>
+            <div>
+                <span class="material-icons md-36 close" id="'close-btn" onclick="closeWindow()">close</span>
+            </div>
+        </div>
+        
+        <iframe src="https://bonetome.com/" class="webview" frameBorder="0">Something went wrong accessing bonetome :(</iframe>
+    </body>
+</html>

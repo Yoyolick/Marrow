@@ -5,24 +5,28 @@
         <title>Marrow</title>
         <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/main.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-        <script src="menuHandler.js"></script>
+        <script src="scripts/menuHandler.js"></script>
     </head>
 
     <body class="background unselectable">
 
         <div class="navbar">
             
-            <div class="marrowBookmark">
-                <p>holder</p>
-            </div>
+            <a class="marrowBookmark">
+                <div>
+                    <img src="photos/marrow" class="marrowIcon">
+                </div>
+            </a>
 
-            <div class="bonetomeBookmark">
-                <p>holder</p>
-            </div>
+            <a href="tome.html" class="bonetomeBookmark">
+                <div>
+                    <img src="photos/tomeIcon.png" class="tomeIcon hvr-float">
+                </div>
+            </a>
 
             <div class="selectedGame">
                 <p>holder</p>
@@ -33,12 +37,12 @@
             </div>
 
             <div class="settingsBtn">
-                <span class="material-icons" style="padding: 3.33px;">settings</span>
+                <span class="material-icons md-24 hvr-grow-rotate" style="padding: 3.33px;">settings</span>
             </div>
 
-            <span class="material-icons minimize" onclick="minWindow()">minimize</span>
+            <span class="material-icons md-36 minimize" onclick="minWindow()">minimize</span>
             <div>
-                <span class="material-icons close" id="'close-btn" onclick="closeWindow()">close</span>
+                <span class="material-icons md-36 close" id="'close-btn" onclick="closeWindow()">close</span>
             </div>
         </div>
 

@@ -1,0 +1,152 @@
+.navbar {
+    background-color: rgb(28, 28, 28);
+    margin: 0px;
+    height: 70px;
+    display: flex;
+    width: 100%;
+    -webkit-app-region: drag;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    -webkit-app-region: no-drag;
+}
+
+.close:hover {
+    background-color: rgba(0, 0, 0, 255);
+}
+
+.minimize {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    -webkit-app-region: no-drag;
+}
+
+.minimize:hover {
+    background-color: rgba(0, 0, 0, 255);
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.marrowBookmark {
+    margin-left: 10px;
+    -webkit-app-region: no-drag;
+    width: 40px;
+}
+
+.marrowBookmark:hover {
+    background-color: rgba(13, 13, 13, 255);
+}
+
+.marrowIcon {
+    height: 30px;
+    width: 30px;
+    margin-top: 20px;
+    margin-left: 5px;
+    filter: brightness(.5);
+}
+
+.marrowIcon:hover {
+    filter: brightness(1);
+}
+
+.bonetomeBookmark {
+    background-color: rgba(13, 13, 13, 255);
+    margin-left: 10px;
+    -webkit-app-region: no-drag;
+    width: 40px;
+}
+
+.tomeIcon {
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    filter: brightness(1);
+}
+
+.tomeIcon:hover {
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    margin: 0px;
+    /* Hide horizontal scrollbar */
+    overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(27, 27, 27);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(53, 53, 53);
+}
+
+/* Float */
+.hvr-float {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+}
+
+.webview {
+    height: 600px;
+    width: 100%;
+}

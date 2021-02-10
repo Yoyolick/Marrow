@@ -77,7 +77,7 @@
 .minimize {
     position: absolute;
     top: 10px;
-    right: 40px;
+    right: 50px;
     -webkit-app-region: no-drag;
 }
 
@@ -101,14 +101,58 @@
     user-select: none;
 }
 
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
 .marrowBookmark {
     background-color: rgba(13, 13, 13, 255);
     margin-left: 10px;
+    -webkit-app-region: no-drag;
+    width: 40px;
+}
+
+.marrowIcon {
+    height: 30px;
+    width: 30px;
+    margin-top: 20px;
+    margin-left: 5px;
 }
 
 .bonetomeBookmark {
-    background-color: rgba(13, 13, 13, 255);
     margin-left: 10px;
+    -webkit-app-region: no-drag;
+    width: 40px;
+}
+
+.bonetomeBookmark:hover {
+    background-color: rgba(13, 13, 13, 255);
+}
+
+.tomeIcon {
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    filter: brightness(.5);
+}
+
+.tomeIcon:hover {
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    filter: brightness(1);
 }
 
 .selectedGame {
@@ -138,6 +182,7 @@
     height: 30px;
     text-align: center;
     align-content: center;
+    -webkit-app-region: no-drag;
 }
 
 body {
@@ -166,4 +211,66 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(53, 53, 53);
+}
+
+/* Float */
+.hvr-float {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+}
+
+/* Grow */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+/* Grow Rotate */
+.hvr-grow-rotate {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr-grow-rotate:hover,
+.hvr-grow-rotate:focus,
+.hvr-grow-rotate:active {
+    -webkit-transform: scale(1.3) rotate(4deg);
+    transform: scale(1.3) rotate(4deg);
 }
