@@ -1,3 +1,6 @@
-//TODO
-//depend on warnings
-//recursively get cartilage files from each games folder
+// In the Renderer process
+const { ipcRenderer } = require('electron');
+
+ipcRenderer.send("test");
+
+console.log("lmao");

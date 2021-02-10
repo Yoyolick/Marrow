@@ -191,6 +191,7 @@ html {
     width: 350px;
     display: flex;
     background-color: black;
+    -webkit-app-region: no-drag;
 }
 
 .gameSelect:hover {
@@ -208,7 +209,7 @@ html {
     margin-top: 50px;
 }
 
-.dropdown-content p {
+.dropdown-content a {
     float: none;
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -216,7 +217,7 @@ html {
     text-align: left;
 }
 
-.dropdown-content p:hover {
+.dropdown-content a:hover {
     background: rgb(53, 53, 53);
 }
 
