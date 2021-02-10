@@ -185,6 +185,10 @@
     -webkit-app-region: no-drag;
 }
 
+.gameSelect {
+    display: flex;
+}
+
 body {
     font-family: 'Kanit', sans-serif;
     color: white;
