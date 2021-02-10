@@ -1,4 +1,4 @@
-const {remote}=require('electron');
+const {remote, ipcRenderer}=require('electron');
 var win = remote.getCurrentWindow();
 
 function closeWindow(){
