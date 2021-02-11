@@ -10,7 +10,6 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
         <script src="scripts/menuHandler.js"></script>
-        <script src="scripts/onLoad.js"></script>
     </head>
 
     <body class="background unselectable">
@@ -38,7 +37,7 @@
                 </div>
 
                 <div class="dropdown-content" id="gameDropdown">
-                    <a><p>Add A New Game</p></a>
+                    <a onclick="addGamePopup()"><p>Add A New Game</p></a>
                 </div>
             </div>
 
@@ -77,6 +76,21 @@
         </div>
 
         <div class="lowerContent">
+
+           <div id="addGamePopup" class="addGamePopup">
+               <div class="popupcontent">
+                    <div class="LocateGame" onclick="locateGame()">
+                        <p id="locateText">Locate Game</p>
+                    </div>
+                    <div class="gamePath">
+                        <p id="gamePathText"> path</p>
+                    </div>
+                    <div class="autoPredictGame">
+                        <p id="autoPredictText">Is this game ?</p>
+                    </div>
+               </div>
+           </div>
+
             <div class="sidebar">
 
                 <div class="category" style="margin-top: 0px;">

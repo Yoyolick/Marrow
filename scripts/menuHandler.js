@@ -1,4 +1,4 @@
-const {remote, ipcRenderer}=require('electron');
+const {remote, ipcRenderer, dialog}=require('electron');
 var win = remote.getCurrentWindow();
 
 function closeWindow(){
@@ -14,11 +14,38 @@ function dropDownBox() {
     document.getElementById("dropDown").classList.toggle("upwards");
 }
 
-window.onclick = function(e) {
-    if (!e.target.matches('.gameSelect')) {
-        var myDropdown = document.getElementById("dropContent");
-        if (myDropdown.classList.contains('show')) {
-            myDropdown.classList.remove('show');
-        }
-    }
+function addGamePopup(){
+    document.getElementById("addGamePopup").classList.toggle("showpopup");
+    //TODO idk why but i cant toggle visibility of the dropdown here
 }
+
+function locateGame(){
+    ipcRenderer.send('file-browse', 'browseGame')
+}
+
+//console.log(ipcRenderer.sendSync('synchronous-message', 'sync ping')) 
+
+// Async message handler
+ipcRenderer.on('browse-result', (event, arg) => {
+
+    document.getElementById('gamePathText').innerText = arg[0]
+
+    var folders = arg[0].split("\\")
+
+    if(folders[folders.length - 1] == 'BONEWORKS'){
+        document.getElementById('autoPredictText').innerText = folders[folders.length - 1];
+    }
+
+    else{
+        var autoDetectedSuccess = false;
+        document.getElementById('autoPredictText').innerText = "Marrow could not detect a pre configured game at this path"
+    }
+
+    if(!autoDetectedSuccess){
+        document.getElementById("uploadCartilage").classList.toggle("show");
+    }
+
+})
+
+// Async message sender
+//ipcRenderer.send('asynchronous-message', 'async ping')
