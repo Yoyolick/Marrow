@@ -23,6 +23,12 @@ function locateGame(){
     ipcRenderer.send('file-browse', 'browseGame')
 }
 
+function settingsPopUp(){
+    document.getElementById("settingsPopUp").classList.toggle("showSettings");
+}
+
+
+
 //console.log(ipcRenderer.sendSync('synchronous-message', 'sync ping')) 
 
 // Async message handler
