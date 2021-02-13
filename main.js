@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain, dialog  } = require('electron')
 const remote = require('electron').remote;
+var fs = require('fs');
 
 // WINDOW STUFF
 
@@ -59,3 +60,17 @@ ipcMain.on('file-browse', (event, arg) => {
 //})
 
 // select folder
+
+//check games local dir
+
+ipcMain.on('directory-operation', (event, arg) => {
+
+  if(!fs.existsSync(app.getPath('userData') + "\\Games")){
+    fs.mkdir(app.getPath('userData') + "\\Games", function(err){
+      if (err){
+        console.log(err);
+      }
+    });
+  }
+
+})

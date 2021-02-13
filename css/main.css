@@ -553,3 +553,20 @@ img.slowhover {
     font-size: 30px;
     text-align: center;
 }
+
+.newGamePopup {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(63, 63, 63);
+    width: 600px;
+    height: 600px;
+}
+
+.showItBitch {
+    visibility: visible;
+}

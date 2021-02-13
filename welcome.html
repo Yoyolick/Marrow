@@ -10,12 +10,27 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 
         <script src="scripts/menuHandler.js"></script>
+        <script src="scripts/gameManager.js"></script>
     </head>
     <body class="background unselectable">
         <div class="navbar">
             <span class="material-icons md-36 minimize" onclick="minWindow()">minimize</span>
             <div>
                 <span class="material-icons md-36 close" id="'close-btn" onclick="closeWindow()">close</span>
+            </div>
+        </div>
+
+        <div id="newGamePopup" class="newGamePopup">
+            <div class="popupcontent">
+                 <div class="LocateGame" onclick="addGamePopup()">
+                     <p id="locateText">Locate Game</p>
+                 </div>
+                 <div class="gamePath">
+                     <p id="gamePathText"> path</p>
+                 </div>
+                 <div class="autoPredictGame">
+                     <p id="autoPredictText">Is this game ?</p>
+                 </div>
             </div>
         </div>
 
@@ -27,7 +42,7 @@
         </div>
 
         <div id="gameCarosel">
-            <div id="addGameContainer">
+            <div id="addGameContainer" onclick="newGamePopup()">
                 <h1 id="addGameText">Add A New Game</h1>
                 <h1 id="plus">+</h1>
             </div>

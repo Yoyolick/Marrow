@@ -19,6 +19,11 @@ function addGamePopup(){
     //TODO idk why but i cant toggle visibility of the dropdown here
 }
 
+function newGamePopup()
+{
+    document.getElementById("newGamePopup").classList.toggle("showItBitch");
+}
+
 function locateGame(){
     ipcRenderer.send('file-browse', 'browseGame')
 }
