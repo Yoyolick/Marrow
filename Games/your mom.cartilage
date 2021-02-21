@@ -1,9 +1,11 @@
-[
-	{
-		"gameName":"your mom",
-		"modPaths":{
-			"dll":"/Mods",
-			"melon":"/UserData/CustomItems"
+[{
+	"gameName": "your mom",
+	"categories": {
+		"your mom": {
+			"dll": "/Mods"
+		},
+		"your mom": {
+			"melon": "/Mods"
 		}
 	}
-]
+}]

@@ -17,6 +17,7 @@ var selectedgame = "";
 
 var configuredGames = []
 var gameCount = 0;
+
 //TODO this implemation is literally dogshit im doing this at 1:32am
 
 ipcRenderer.on('games-returned', (event, arg) => {
@@ -24,33 +25,68 @@ ipcRenderer.on('games-returned', (event, arg) => {
     gameCount = 0;
     configuredGames.push(arg);
 
-    if(configuredGames == undefined || configuredGames[0].length == 0){
+    if (configuredGames == undefined || configuredGames[0].length == 0) {
 
-        window.location= "welcome.html"
+        window.location = "welcome.html"
         console.log('redirected to welcome due to no cartilage')
     }
-    console.log(configuredGames)
-    configuredGames.forEach(function(game){
-        console.log(game)
-        gameCount+=1;
+
+    configuredGames[0].forEach(function (game) {
+        gameCount += 1;
+        console.log('game detected: ' + (game[0].gameName).toString())
         var newDropItem = document.createElement('a');
         newDropItem.classList.add('dropdown-content')
-        newDropItem.textContent = (game[gameCount - 1][0].gameName).toString()
+        newDropItem.textContent = (game[0].gameName).toString()
         newDropItem.style.marginTop = (gameCount * 50).toString() + "px"
-        newDropItem.setAttribute("id",(game[gameCount - 1][0].gameName).toString())
-        newDropItem.onclick = function changeGame(){
-            document.getElementById("selectedGameText").innerText = (game[gameCount - 1][0].gameName).toString();
-            selectedgame = (game[gameCount - 1][0].gameName).toString();
+        newDropItem.setAttribute("id", (game[0].gameName).toString())
+        newDropItem.onclick = function changeGame() {
+            document.getElementById("selectedGameText").innerText = (game[0].gameName).toString();
+            selectedgame = game;
+            loadCategories();
         };
         document.getElementById('gameDropdown').appendChild(newDropItem);
     })
 
     //create add game button at bottom
-    gameCount+=1;
+    gameCount += 1;
     var newDropItem = document.createElement('a');
     newDropItem.classList.add('dropdown-content');
     newDropItem.textContent = 'Add A New Game';
-    newDropItem.style.marginTop = (gameCount * 50).toString() + "px"
+    newDropItem.style.marginTop = (gameCount * 50).toString() + "px";
     document.getElementById('gameDropdown').appendChild(newDropItem);
 
+    //change defualt dropdown text
+    document.getElementById("selectedGameText").innerText = "";
+    selectedgame = "";
+
+    //reload categories
+    loadCategories();
 })
+
+function loadCategories() {
+    //delete present categories
+    var el = document.getElementById('sidebar');
+    while (el.firstChild) el.removeChild(el.firstChild);
+    if (selectedgame != "") {
+
+        var cats = selectedgame[0]
+
+        for (const property in cats.categories) {
+            console.log(`${property}`);
+            var newCategory = document.createElement('div');
+            newCategory.textContent = `${property}`;
+            newCategory.classList.add('category');
+            newCategory.onclick = function changeGame() {
+                document.getElementById("selectedGameText").innerText = (game[0].gameName).toString();
+                selectedgame = game[0].gameName;
+            };
+            document.getElementById('sidebar').appendChild(newCategory);
+        }
+
+        document.getElementById('noGame').classList.add("hidden");
+        //document.getElementById('noCategory').classList.add("hidden");
+    } else {
+        document.getElementById('noGame').classList.remove("hidden");
+    }
+
+}

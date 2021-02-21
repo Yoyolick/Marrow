@@ -1,158 +1,162 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Marrow</title>
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-        <script src="scripts/menuHandler.js"></script>
-        <script src="scripts/gameManager.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Marrow</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 
-    <body class="background unselectable">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <script src="scripts/menuHandler.js"></script>
+    <script src="scripts/gameManager.js"></script>
+</head>
 
-        <div class="navbar">
+<body class="background unselectable">
 
-            <a class="marrowBookmark">
-                <div>
-                    <img src="photos/marrow" class="marrowIcon">
-                </div>
-            </a>
+    <div class="navbar">
 
-            <a href="tome.html" class="bonetomeBookmark">
-                <div>
-                    <img src="photos/tomeIcon.png" class="tomeIcon hvr-float">
-                </div>
-            </a>
-            <div class="gameSelect" onclick="dropDownBox()">
-                <div class="selectedGame">
-                    <p id="selectedGameText">selectedGame</p>
-                </div>
-
-                <div id="dropDown">
-                    <span class="material-icons  md-48">arrow_drop_down</span>
-                </div>
-                <div class="dropdown">
-                    <div class="dropdown-content nobackground" id="gameDropdown">
-                    
-                    </div>
-                </div>
-            </div>
-
-            <div class="settingsBtn" onclick="settingsPopUp()">
-                <span class="material-icons md-24 hvr-grow-rotate" style="padding: 3.33px;">settings</span>
-            </div>
-
-            <span class="material-icons md-36 minimize" onclick="minWindow()">minimize</span>
+        <a class="marrowBookmark">
             <div>
-                <span class="material-icons md-36 close" id="'close-btn" onclick="closeWindow()">close</span>
+                <img src="photos/marrow" class="marrowIcon">
+            </div>
+        </a>
+
+        <a href="tome.html" class="bonetomeBookmark">
+            <div>
+                <img src="photos/tomeIcon.png" class="tomeIcon hvr-float">
+            </div>
+        </a>
+        <div class="gameSelect" onclick="dropDownBox()">
+            <div class="selectedGame">
+                <p id="selectedGameText">selectedGame</p>
+            </div>
+
+            <div id="dropDown">
+                <span class="material-icons  md-48">arrow_drop_down</span>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-content nobackground" id="gameDropdown">
+
+                </div>
             </div>
         </div>
 
-        <div class="lowerHeader">
+        <div class="settingsBtn" onclick="settingsPopUp()">
+            <span class="material-icons md-24 hvr-grow-rotate" style="padding: 3.33px;">settings</span>
+        </div>
 
-            <div class="lowHeaderCategories">
-                <b>Categories:</b>
+        <span class="material-icons md-36 minimize" onclick="minWindow()">minimize</span>
+        <div>
+            <span class="material-icons md-36 close" id="'close-btn" onclick="closeWindow()">close</span>
+        </div>
+    </div>
+
+    <div class="lowerHeader">
+
+        <div class="lowHeaderCategories">
+            <b>Categories:</b>
+        </div>
+
+        <div class="lowHeaderToggle">
+            <b>TOGGLE</b>
+        </div>
+
+        <div class="lowHeaderName">
+            <b>NAME</b>
+        </div>
+
+        <div class="lowHeaderPath">
+            <b>PATH</b>
+        </div>
+
+        <div class="lowHeaderSize">
+            <b>SIZE</b>
+        </div>
+
+    </div>
+
+    <div class="lowerContent">
+
+        <div id="addGamePopup" class="addGamePopup">
+            <div class="popupcontent">
+                <div class="LocateGame" onclick="locateGame()">
+                    <p id="locateText">Locate Game</p>
+                </div>
+                <div class="gamePath">
+                    <p id="gamePathText"> path</p>
+                </div>
+                <div class="autoPredictGame">
+                    <p id="autoPredictText">Is this game ?</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="settingsPopUp" class="settingsPopUp">
+            <div class="popupcontent">
+                <div class="openWelcome" href="welcome.html">
+                    <p id="locateText">Locate Game</p>
+                    <div id="button">
+                        <a href="welcome.html">
+                            <p>Click for welcome page</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+
+            <div class="category" style="margin-top: 0px;">
+                <b>Mods</b>
             </div>
 
-            <div class="lowHeaderToggle">
-                <b>TOGGLE</b>
+            <div class="category">
+                <b>Simple Mods</b>
             </div>
 
-            <div class="lowHeaderName">
-                <b>NAME</b>
+            <div class="category">
+                <b>Custom Weapons</b>
             </div>
 
-            <div class="lowHeaderPath">
-                <b>PATH</b>
+            <div class="category">
+                <b>Custom Items</b>
             </div>
 
-            <div class="lowHeaderSize">
-                <b>SIZE</b>
+            <div class="category">
+                <b>Custom NPCs</b>
+            </div>
+
+            <div class="category">
+                <b>Custom Maps</b>
+            </div>
+
+            <div class="category">
+                <b>Player Models</b>
+            </div>
+
+            <div class="category">
+                <b>Custom Skins</b>
+            </div>
+
+            <div class="category" style="margin-bottom: 0px;">
+                <b>Miscellaneous</b>
             </div>
 
         </div>
 
-        <div class="lowerContent">
-
-           <div id="addGamePopup" class="addGamePopup">
-               <div class="popupcontent">
-                    <div class="LocateGame" onclick="locateGame()">
-                        <p id="locateText">Locate Game</p>
-                    </div>
-                    <div class="gamePath">
-                        <p id="gamePathText"> path</p>
-                    </div>
-                    <div class="autoPredictGame">
-                        <p id="autoPredictText">Is this game ?</p>
-                    </div>
-               </div>
-           </div>
-
-           <div id="settingsPopUp" class="settingsPopUp">
-                <div class="popupcontent">
-                    <div  class="openWelcome" href="welcome.html">
-                        <p id="locateText">Locate Game</p>
-                        <div id="button">
-                            <a href="welcome.html">
-                                <p>Click for welcome page</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sidebar">
-
-                <div class="category" style="margin-top: 0px;">
-                    <b>Mods</b>
-                </div>
-
-                <div class="category">
-                    <b>Simple Mods</b>
-                </div>
-
-                <div class="category">
-                    <b>Custom Weapons</b>
-                </div>
-
-                <div class="category">
-                    <b>Custom Items</b>
-                </div>
-
-                <div class="category">
-                    <b>Custom NPCs</b>
-                </div>
-
-                <div class="category">
-                    <b>Custom Maps</b>
-                </div>
-
-                <div class="category">
-                    <b>Player Models</b>
-                </div>
-
-                <div class="category">
-                    <b>Custom Skins</b>
-                </div>
-
-                <div class="category" style="margin-bottom: 0px;">
-                    <b>Miscellaneous</b>
-                </div>
-
-            </div>
-
-            <div class="togglePanel">
-
-                <p>TOGGLE PANEL</p>
-
+        <div class="togglePanel">
+            <div id='noGame'>
+                <h1>No Game Selected</h1>
+                <p>Please select a game from the drop down to get started</p>
             </div>
 
         </div>
 
-    </body>
+    </div>
+
+</body>
+
 </html>
