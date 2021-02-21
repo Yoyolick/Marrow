@@ -1,0 +1,9 @@
+[
+	{
+		"gameName":"BONEWORKS",
+		"modPaths":{
+			"dll":"/Mods",
+			"melon":"/UserData/CustomItems"
+		}
+	}
+]

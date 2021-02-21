@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain, dialog  } = require('electron')
 const remote = require('electron').remote;
+const Store = require('electron-store');
 var fs = require('fs');
 
 // WINDOW STUFF
@@ -9,6 +10,7 @@ function createWindow () {
     width: 1200,
     height: 600,
     frame: false,
+    icon: 'photos/tomeIcon.ico',
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true
@@ -63,14 +65,44 @@ ipcMain.on('file-browse', (event, arg) => {
 
 //check games local dir
 
+///TODO THIS SHIT WILL MOST LIKELY BREAK IN BUILD
+var cartilageFolder = __dirname + "\\Games";
+
 ipcMain.on('directory-operation', (event, arg) => {
 
-  if(!fs.existsSync(app.getPath('userData') + "\\Games")){
-    fs.mkdir(app.getPath('userData') + "\\Games", function(err){
+  if(!fs.existsSync(cartilageFolder)){
+    fs.mkdir(cartilageFolder, function(err){
       if (err){
         console.log(err);
       }
     });
   }
 
+})
+
+var gamesReturn = [];
+
+ipcMain.on('fetch-cartilage', (event, arg) => {
+  gamesReturn = [];
+  if(arg == "listPresentCartilages"){
+
+    fs.readdir(cartilageFolder, function(err, files) {
+      if (err) {
+        console.log("Error getting directory information.")
+      } 
+      else {
+
+        console.log(files)
+        files.forEach(function(file){
+          console.log(file)
+          if(file.split('.').pop() == 'cartilage'){
+            console.log(JSON.parse(fs.readFileSync(cartilageFolder + '\\' + file)))
+            //event.sender.send('games-returned', JSON.parse(fs.readFileSync(cartilageFolder + '\\' + file)));
+            gamesReturn.push(JSON.parse(fs.readFileSync(cartilageFolder + '\\' + file)))
+          }
+        })
+        event.sender.send('games-returned', gamesReturn);
+      }
+    })
+  }
 })

@@ -21,7 +21,7 @@ function addGamePopup(){
 
 function newGamePopup()
 {
-    document.getElementById("newGamePopup").classList.toggle("showItBitch");
+    document.getElementById("newGamePopup").classList.toggle("showNewGame");
 }
 
 function locateGame(){
@@ -31,8 +31,6 @@ function locateGame(){
 function settingsPopUp(){
     document.getElementById("settingsPopUp").classList.toggle("showSettings");
 }
-
-
 
 //console.log(ipcRenderer.sendSync('synchronous-message', 'sync ping')) 
 

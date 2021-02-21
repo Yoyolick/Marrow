@@ -1,0 +1,9 @@
+[
+	{
+		"gameName":"your mom",
+		"modPaths":{
+			"dll":"/Mods",
+			"melon":"/UserData/CustomItems"
+		}
+	}
+]
