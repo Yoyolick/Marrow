@@ -14,9 +14,10 @@ ipcRenderer.send('fetch-cartilage', 'listPresentCartilages');
 //load all games into box
 
 var selectedgame = "";
-
+var selectedCategory = "";
 var configuredGames = []
 var gameCount = 0;
+var categoryData;
 
 //TODO this implemation is literally dogshit im doing this at 1:32am
 
@@ -77,8 +78,10 @@ function loadCategories() {
             newCategory.textContent = `${property}`;
             newCategory.classList.add('category');
             newCategory.onclick = function changeGame() {
-                document.getElementById("selectedGameText").innerText = (game[0].gameName).toString();
-                selectedgame = game[0].gameName;
+                selectedCategory = `${property}`;
+                categoryData = cats.categories;
+                console.log(categoryData)
+                ipcRenderer.send('retrieve-mods', categoryData);
             };
             document.getElementById('sidebar').appendChild(newCategory);
         }

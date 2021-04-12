@@ -1,11 +1,16 @@
-const { app, BrowserWindow, ipcMain, dialog  } = require('electron')
+const {
+  app,
+  BrowserWindow,
+  ipcMain,
+  dialog
+} = require('electron')
 const remote = require('electron').remote;
 const Store = require('electron-store');
 var fs = require('fs');
 
 // WINDOW STUFF
 
-function createWindow () {
+function createWindow() {
   const win = new BrowserWindow({
     width: 1200,
     height: 600,
@@ -39,8 +44,11 @@ app.on('activate', () => {
 // Event handler for asynchronous incoming messages
 ipcMain.on('file-browse', (event, arg) => {
 
-  if(arg == "browseGame"){
-    event.sender.send('browse-result', dialog.showOpenDialogSync({ properties: ['openDirectory'], title: 'Add A New Marrow Game'}))
+  if (arg == "browseGame") {
+    event.sender.send('browse-result', dialog.showOpenDialogSync({
+      properties: ['openDirectory'],
+      title: 'Add A New Marrow Game'
+    }))
   }
 
 })
@@ -70,9 +78,9 @@ var cartilageFolder = __dirname + "\\Games";
 
 ipcMain.on('directory-operation', (event, arg) => {
 
-  if(!fs.existsSync(cartilageFolder)){
-    fs.mkdir(cartilageFolder, function(err){
-      if (err){
+  if (!fs.existsSync(cartilageFolder)) {
+    fs.mkdir(cartilageFolder, function (err) {
+      if (err) {
         console.log(err);
       }
     });
@@ -84,19 +92,17 @@ var gamesReturn = [];
 
 ipcMain.on('fetch-cartilage', (event, arg) => {
   gamesReturn = [];
-  if(arg == "listPresentCartilages"){
+  if (arg == "listPresentCartilages") {
 
-    fs.readdir(cartilageFolder, function(err, files) {
+    fs.readdir(cartilageFolder, function (err, files) {
       if (err) {
         console.log("Error getting directory information.")
-      } 
-      else {
-
-        console.log(files)
-        files.forEach(function(file){
-          console.log(file)
-          if(file.split('.').pop() == 'cartilage'){
-            console.log(JSON.parse(fs.readFileSync(cartilageFolder + '\\' + file)))
+      } else {
+        //console.log(files)
+        files.forEach(function (file) {
+          //console.log(file)
+          if (file.split('.').pop() == 'cartilage') {
+            //console.log(JSON.parse(fs.readFileSync(cartilageFolder + '\\' + file)))
             //event.sender.send('games-returned', JSON.parse(fs.readFileSync(cartilageFolder + '\\' + file)));
             gamesReturn.push(JSON.parse(fs.readFileSync(cartilageFolder + '\\' + file)))
           }
@@ -108,3 +114,13 @@ ipcMain.on('fetch-cartilage', (event, arg) => {
 })
 
 //.food accessories grenade body
+
+ipcMain.on('retrieve-mods', (event, arg) => {
+  console.log(arg)
+  console.log(arg['Code Mods'])
+  for (const mod in arg) {
+    console.log(typeof ((mod)))
+  }
+})
+
+console.log('pog');
